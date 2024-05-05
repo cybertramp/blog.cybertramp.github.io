@@ -9,6 +9,8 @@
   
   <title>
     
+    set_nmcli |
+    
     Cybertramp&#39;s logpages
   </title>
 
@@ -84,68 +86,90 @@
 </header>
 
   <div id="content" class="content">
-    <div id="index">
-  
-  <div class="index-li">
-    <a href="/20240506/daily_002/">
-      <h2 class="index-title">
-        daily_002
-      </h2>
-      <div class="index-brief">
-        이 새벽까지 무엇을 하는건지… 어린이날은 슈루룩 지나갔다.
-벌써 한 주가 지났지만 블로그를 배포하는 부분에서 문제가 생겨 계속 헤맸었는데.. 이 시간에 해결되어 이전 몇몇 포스트들을 옮겼다.
-아직은 검색 기능이 안되지만 검색 기능까지 되면 더 할나위 없이 좋을 것 같다
-        ...
-      </div>
-    </a>
-    <div class="article-meta">
-      <span>2024-05-06</span>
-      
-      
-      
-      <span>
-        <i class="fa fa-folder" aria-hidden="true"></i>
-        <a href="/categories/notes/">notes</a>
-        
-      </span>
-      
-      
-      
-    </div>
-  </div>
-  
-  <div class="index-li">
-    <a href="/20240429/daily_001/">
-      <h2 class="index-title">
-        hello_world
-      </h2>
-      <div class="index-brief">
-        얼마만의 블로그인가.. ㅎ :)
-몇 년 동안 미루고 미루던 블로그를 다시 시작하려한다. 대학 시절만 해도 tistory에 연구실에서 공부하던 것도 올리고 나름 열심히 기록했다고 떠올려진다… 하지만.. 핑계이지만 회사 일, 그리고 가장 큰 나의 게으름 으로 계속하고 있지
-        ...
-      </div>
-    </a>
-    <div class="article-meta">
-      <span>2024-04-29</span>
-      
-      
-      
-      <span>
-        <i class="fa fa-folder" aria-hidden="true"></i>
-        <a href="/categories/notes/">notes</a>
-        
-      </span>
-      
-      
-      
-    </div>
-  </div>
+    <h1 id="article-title">
+  set_nmcli
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
   
 
-  <div id="index-paginator">
+  <span>Cybertramp</span>
+  <span>2023-09-24 02:51:35</span>
+
+  <div id="article-categories">
+    
+    <span>Categories：</span>
+    
+    
+    <span>
+      <i class="fa fa-folder" aria-hidden="true">
+        <a href="/categories/linux/">linux</a>
+      </i>
+      
+    </span>
+    
+    
+    
+
+    
+    <span>Tags：</span>
+    
+    
+    <span>
+      <i class="fa fa-tag" aria-hidden="true">
+        <a href="/tags/setup/">setup</a>
+      </i>
+    </span>
+    
+    
+    
+  </div>
+
+</div>
+
+
+<!-- content -->
+<div id="article-content">
+  <blockquote>
+<p>nmcli는 redhat 계열에서 사용하는 network manager 프로그램이다.</p>
+</blockquote>
+<h2 id="현재-네트워크-커넥션-정보"><a href="#현재-네트워크-커넥션-정보" class="headerlink" title="현재 네트워크 커넥션 정보"></a>현재 네트워크 커넥션 정보</h2><p>nmcli con show</p>
+<h2 id="특정-커넥션-정보-수동-설정"><a href="#특정-커넥션-정보-수동-설정" class="headerlink" title="특정 커넥션 정보 수동 설정"></a>특정 커넥션 정보 수동 설정</h2><p>한 줄로 다음과 같이 인자로 수정이 가능하다.</p>
+<pre><code class="hljs bash">nmcli con mod <span class="hljs-string">&quot;Wired connection 1&quot;</span>
+ipv4.addresses <span class="hljs-string">&quot;HOST_IP_ADDRESS/IP_NETMASK_BIT_COUNT&quot;</span>
+ipv4.gateway <span class="hljs-string">&quot;IP_GATEWAY&quot;</span>
+ipv4.dns <span class="hljs-string">&quot;PRIMARY_IP_DNS,SECONDARY_IP_DNS&quot;</span>
+ipv4.dns-search <span class="hljs-string">&quot;DOMAIN_NAME&quot;</span>
+ipv4.method <span class="hljs-string">&quot;manual&quot;</span></code></pre>
+
+<p>설정 적용</p>
+<pre><code class="hljs bash">nmcli con up <span class="hljs-string">&quot;Wired connection 1&quot;</span></code></pre>
+
+</div>
+
+
+<!-- post-guide -->
+
+<div class="post-guide">
+  <div class="item left">
+    
+    <a href="/20240429/daily_001/">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+      hello_world
+    </a>
+    
+  </div>
+  <div class="item right">
+    
+    <a href="/20230102/install-wails/">
+      install_wails
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </a>
     
   </div>
 </div>
+
   </div>
   <div id="footer">
   <p>

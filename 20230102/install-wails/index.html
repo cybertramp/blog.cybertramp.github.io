@@ -9,7 +9,7 @@
   
   <title>
     
-    Mac에서 hexo install 시 permission denined. |
+    install_wails |
     
     Cybertramp&#39;s logpages
   </title>
@@ -87,7 +87,7 @@
 
   <div id="content" class="content">
     <h1 id="article-title">
-  Mac에서 hexo install 시 permission denined.
+  install_wails
 </h1>
 
 <!-- meta -->
@@ -95,7 +95,7 @@
   
 
   <span>Cybertramp</span>
-  <span>2024-04-29 01:30:47</span>
+  <span>2023-01-02 02:48:55</span>
 
   <div id="article-categories">
     
@@ -104,7 +104,7 @@
     
     <span>
       <i class="fa fa-folder" aria-hidden="true">
-        <a href="/categories/mac/">mac</a>
+        <a href="/categories/linux/">linux</a>
       </i>
       
     </span>
@@ -118,7 +118,7 @@
     
     <span>
       <i class="fa fa-tag" aria-hidden="true">
-        <a href="/tags/permission-error/">permission_error</a>
+        <a href="/tags/install/">install</a>
       </i>
     </span>
     
@@ -131,32 +131,36 @@
 
 <!-- content -->
 <div id="article-content">
-  <p>아래와 같은 에러가 발생하는 경우가 있다.</p>
-<pre><code class="hljs bash">WARN  Failed to install dependencies. Please run <span class="hljs-string">&#x27;npm install&#x27;</span> <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;/Users/greendot/blog&quot;</span> folder.
-➜  blog npm install
-npm ERR! code EACCES
-npm ERR! syscall <span class="hljs-built_in">mkdir</span>
-npm ERR! path /Users/greendot/.npm/_cacache/index-v5/b2/37
-npm ERR! errno EACCES
-npm ERR!
-npm ERR! Your cache folder contains root-owned files, due to a bug <span class="hljs-keyword">in</span>
-npm ERR! previous versions of npm <span class="hljs-built_in">which</span> has since been addressed.
-npm ERR!
-npm ERR! To permanently fix this problem, please run:
-npm ERR!   sudo <span class="hljs-built_in">chown</span> -R 501:20 <span class="hljs-string">&quot;/Users/greendot/.npm&quot;</span>
-
-npm ERR! A complete <span class="hljs-built_in">log</span> of this run can be found <span class="hljs-keyword">in</span>: /Users/greendot/.npm/_logs/2024-04-20T06_10_50_264Z-debug-0.lo</code></pre>
-
-<h3 id="해결"><a href="#해결" class="headerlink" title="해결"></a>해결</h3><p>mac에서 권한 설정이 안되어 있어서 그렇다.</p>
+  <p>참고: <a target="_blank" rel="noopener" href="https://wails.io/ko/docs/gettingstarted/installation">https://wails.io/ko/docs/gettingstarted/installation</a></p>
 <ol>
-<li><p>path 찾기</p>
-<pre><code class="hljs bash">npm config get prefix</code></pre>
+<li><p>install golang</p>
+<pre><code class="hljs bash">sudo apt install golang-go -y
+<span class="hljs-built_in">export</span> GO111MODULE=on
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:~/go/bin</code></pre>
 </li>
-<li><p>permission 변경</p>
-<p>npm관련 디렉토리의 권한을 변경한다.</p>
-<pre><code class="hljs bash">sudo <span class="hljs-built_in">chown</span> -R $(<span class="hljs-built_in">whoami</span>) $(npm config get prefix)/&#123;lib/node\_modules,bin,share&#125;</code></pre></li>
+<li><p>install gvm</p>
+<pre><code class="hljs bash">bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+<span class="hljs-built_in">source</span> /home/&#123;USERNAME&#125;/.gvm/scripts/gvm</code></pre>
+</li>
+<li><p>install wails</p>
+<pre><code class="hljs bash">go install github.com/wailsapp/wails/v2/cmd/wails@latest</code></pre>
+</li>
+<li><p>check install is ok</p>
+<pre><code class="hljs bash">wails doctor</code></pre>
+</li>
+<li><p>make project</p>
+<pre><code class="hljs bash">wails init -n XXXX -t vue-ts
+<span class="hljs-built_in">cd</span> XXXX
+<span class="hljs-built_in">cd</span> frontend
+yarn
+<span class="hljs-built_in">cd</span> ..</code></pre>
+</li>
+<li><p>Run Dev mode</p>
+<pre><code class="hljs bash">wails dev</code></pre>
+</li>
+<li><p>build with windows</p>
+<pre><code class="hljs bash">wails build -platform windows/amd64</code></pre></li>
 </ol>
-<p>위와 같이 하면 sudo 없이 npm 설치가 정상적으로 된다.</p>
 
 </div>
 
@@ -166,16 +170,16 @@ npm ERR! A complete <span class="hljs-built_in">log</span> of this run can be fo
 <div class="post-guide">
   <div class="item left">
     
-    <a href="/20240506/daily_002/">
+    <a href="/20230924/set-nmcli/">
       <i class="fa fa-angle-left" aria-hidden="true"></i>
-      daily_002
+      set_nmcli
     </a>
     
   </div>
   <div class="item right">
     
-    <a href="/20240429/daily_001/">
-      hello_world
+    <a href="/20191027/install-centos7-on-powerppc/">
+      install_centos7_on_powerppc
       <i class="fa fa-angle-right" aria-hidden="true"></i>
     </a>
     
