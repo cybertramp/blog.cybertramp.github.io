@@ -9,7 +9,7 @@
   
   <title>
     
-    About |
+    cannot find -lz: No such file or directory |
     
     Cybertramp&#39;s logpages
   </title>
@@ -87,16 +87,91 @@
 
   <div id="content" class="content">
     <h1 id="article-title">
-  About
+  cannot find -lz: No such file or directory
 </h1>
+
+<!-- meta -->
+<div class="article-meta">
+  
+
+  <span>Cybertramp</span>
+  <span>2023-01-01 00:00:00</span>
+
+  <div id="article-categories">
+    
+    <span>Categories：</span>
+    
+    
+    <span>
+      <i class="fa fa-folder" aria-hidden="true">
+        <a href="/categories/linux/">linux</a>
+      </i>
+      
+    </span>
+    
+    
+    
+
+    
+    <span>Tags：</span>
+    
+    
+    <span>
+      <i class="fa fa-tag" aria-hidden="true">
+        <a href="/tags/problem/">problem</a>
+      </i>
+    </span>
+    
+    
+    
+  </div>
+
+</div>
+
 
 <!-- content -->
 <div id="article-content">
-  <p>Hi I’m Cybertramp.<br>This is my blog web site.</p>
-<p>Thanks.</p>
+  <p>빌드시 다음과 같은 에러가 발생하는 경우가 있다.</p>
+<pre><code class="hljs bash">/usr/bin/ld:
+collect2: error: ld returned 1 <span class="hljs-built_in">exit</span> status
+make: *** [makefile:243: Debug/NVMe_WorkLoad.exe] Error 1
+make: *** [makefile:125: build_sub] Error 2</code></pre>
+
+<p>lz 라는게 없다고 이야기하고 있다.</p>
+<p><code>-l</code> 이야 lib 표시이고 <code>z</code>라는 라이브러리가 필요하다는 것이다. z는 zlib를 의미하는 것이고 나는 zlib 개발용을 받으면 된다.</p>
+<p>설치는 다음과 같이 설치하면된다.</p>
+<pre><code class="hljs bash">apt install zlib1g-dev -y</code></pre>
+
 <hr>
+<p>ref</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cyberithub.com/how-to-install-zlib-package-on-ubuntu-20-04-lts-focal-fossa/">https://www.cyberithub.com/how-to-install-zlib-package-on-ubuntu-20-04-lts-focal-fossa/</a></li>
+</ul>
 
 </div>
+
+
+<!-- post-guide -->
+
+<div class="post-guide">
+  <div class="item left">
+    
+    <a href="/20230102/install-wails/">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+      install_wails
+    </a>
+    
+  </div>
+  <div class="item right">
+    
+    <a href="/20191027/install-centos7-on-powerppc/">
+      install_centos7_on_powerppc
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </a>
+    
+  </div>
+</div>
+
   </div>
   <div id="footer">
   <p>
